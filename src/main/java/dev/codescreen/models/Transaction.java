@@ -2,6 +2,9 @@ package dev.codescreen.models;
 
 import java.time.LocalDateTime;
 
+// Class to define Transaction - Load, Authorization
+// Includes getter and setter methods for data processing
+
 public class Transaction{
 
     private String transactionId;
@@ -9,7 +12,6 @@ public class Transaction{
     private double amount;
     private TransactionType type;
     private LocalDateTime timestamp;
-
 
     // Define types of transactions
     public enum TransactionType {

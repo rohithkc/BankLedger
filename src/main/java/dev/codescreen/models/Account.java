@@ -1,18 +1,17 @@
 package dev.codescreen.model;
 
+// Class to define user account
+// Includes getter and setter methods for data processing
+
 public class Account {
     private String accountId;
-    private String ownerName;
     private double balance;
 
-    // Constructor
-    public Account(String accountId, String ownerName, double balance) {
+    public Account(String accountId, double initialBalance) {
         this.accountId = accountId;
-        this.ownerName = ownerName;
-        this.balance = balance;
+        this.balance = initialBalance;
     }
 
-    // Getter and Setter methods
     public String getAccountId() {
         return accountId;
     }
@@ -21,19 +20,27 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
     public double getBalance() {
         return balance;
     }
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        this.balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        this.balance -= amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+               "accountId='" + accountId + '\'' +
+               ", balance=" + balance +
+               '}';
     }
 }
