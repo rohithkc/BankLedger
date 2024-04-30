@@ -1,6 +1,6 @@
 package dev.codescreen.models;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 // Class to define Transaction - Load, Authorization
 // Includes getter and setter methods for data processing
@@ -10,25 +10,17 @@ public class Transaction{
     private String transactionId;
     private String accountId;
     private double amount;
-    private TransactionType type;
-    private LocalDateTime timestamp;
+    private EventType eventType;
+    private Date timestamp;
 
-    // Define types of transactions
-    public enum TransactionType {
-        LOAD, AUTHORIZATION
-    }
-
-
-    // Constructor
-    public Transaction(String transactionId, String accountId, double amount, TransactionType type, LocalDateTime timestamp) {
+    public Transaction(String transactionId, String accountId, double amount, Date timestamp, EventType eventType) {
         this.transactionId = transactionId;
         this.accountId = accountId;
         this.amount = amount;
-        this.type = type;
         this.timestamp = timestamp;
+        this.eventType = eventType;
     }
 
-    // Getter and Setter methods
     public String getTransactionId() {
         return transactionId;
     }
@@ -53,22 +45,30 @@ public class Transaction{
         this.amount = amount;
     }
 
-    public TransactionType getType() {
-        return type;
-    }
-
-    public void setType(TransactionType type) {
-        this.type = type;
-    }
-
-    public LocalDateTime getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 
+    public EventType getEventType() {
+        return eventType;
+    }
 
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
 
+    @Override
+    public String toString() {
+        return "Transaction{" +
+               "transactionId='" + transactionId + '\'' +
+               ", accountId='" + accountId + '\'' +
+               ", amount=" + amount +
+               ", timestamp=" + timestamp +
+               ", eventType=" + eventType +
+               '}';
+    }
 }
