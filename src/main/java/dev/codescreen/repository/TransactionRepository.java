@@ -25,10 +25,11 @@ public class TransactionRepository {
     }
 
     public List<Transaction> findAll() {
-        return transactionsMap.values().stream().flatMap(List::stream).collect(Collectors.toList());
+        List<Transaction> allTransactions = new ArrayList<>();
+        for (List<Transaction> transactions : transactionsMap.values()) {
+            allTransactions.addAll(transactions);
+        }
+        return allTransactions;
     }
 
-    public List<Transaction> findByAccountId(String accountId) {
-        return transactionsMap.getOrDefault(accountId, Collections.emptyList());
-    }
 }
