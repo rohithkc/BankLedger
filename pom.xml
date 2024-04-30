@@ -31,10 +31,11 @@
             <version>${guava.version}</version>
         </dependency>
 
-        <!--Added dependency for spring-->
+        <!--Added dependency for spring boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.3</version>
         </dependency>
 
         <!--Add other dependencies you need here-->
