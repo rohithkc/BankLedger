@@ -1,6 +1,6 @@
 package dev.codescreen.repository;
 
-import model.Transaction;
+import models.Transaction;
 
 import java.util.ArrayList;
 import java.util.Collections;
