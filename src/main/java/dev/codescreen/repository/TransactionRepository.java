@@ -45,12 +45,12 @@ public class TransactionRepository {
         List<Transaction> user_transactions = transactionsMap.get(accountId);
 
         // If no transactions are found, return an empty list.
-        if (transactions == null) {
+        if (user_transactions == null) {
             return Collections.emptyList();
         }
 
         // Return a copy of the list to avoid external modifications.
-        return new ArrayList<>(transactions);  
+        return new ArrayList<>(user_transactions);  
     }
 
 }
