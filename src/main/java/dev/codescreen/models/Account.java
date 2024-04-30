@@ -1,4 +1,4 @@
-package dev.codescreen.model;
+package dev.codescreen.models;
 
 // Class to define user account
 // Includes getter and setter methods for data processing
