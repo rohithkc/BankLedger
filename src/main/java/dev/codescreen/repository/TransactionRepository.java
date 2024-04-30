@@ -8,20 +8,27 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+/*
+ * This class is meant to keep a track of all the various transactions that have occured for each user. 
+ */
 public class TransactionRepository {
 
+    // Initialize Hashmap
     private final ConcurrentHashMap<String, List<Transaction>> transactionsMap = new ConcurrentHashMap<>();
 
     public void save(Transaction transaction) {
+        // Retrieve user accountId
         String accountId = transaction.getAccountId();
-        List<Transaction> cur_transactions = transactionsMap.get(accountId);
+        List<Transaction> user_transactions = transactionsMap.get(accountId);
 
-        if (cur_transactions == null) {
-            cur_transactions = new ArrayList<>();
-            transactionsMap.put(accountId, cur_transactions);
+        // Check if user transactions is even initialized in the map
+        if (user_transactions == null) {
+            user_transactions = new ArrayList<>();
+            transactionsMap.put(accountId, user_transactions);
         }
         
-        cur_transactions.add(transaction);
+        // Add transaction to the user
+        user_transactions.add(transaction);
     }
 
     public List<Transaction> findAll() {
@@ -30,6 +37,20 @@ public class TransactionRepository {
             allTransactions.addAll(transactions);
         }
         return allTransactions;
+    }
+
+    public List<Transaction> findByAccountId(String accountId) {
+
+        // Get the list of transactions for the account.
+        List<Transaction> user_transactions = transactionsMap.get(accountId);
+
+        // If no transactions are found, return an empty list.
+        if (transactions == null) {
+            return Collections.emptyList();
+        }
+
+        // Return a copy of the list to avoid external modifications.
+        return new ArrayList<>(transactions);  
     }
 
 }
