@@ -1,7 +1,9 @@
 package dev.codescreen.models;
 
-// Class to define user account
-// Includes getter and setter methods for data processing
+/*
+* Class to define user account
+* Includes getter and setter methods for data processing
+*/
 
 public class Account {
     private String accountId;

@@ -2,8 +2,11 @@ package dev.codescreen.models;
 
 import java.util.Date;
 
-// Class to define Transaction - Load, Authorization
-// Includes getter and setter methods for data processing
+
+/*
+ * Class to define Transaction - Load, Authorization
+ * Includes getter and setter methods for data processing
+ */
 
 public class Transaction{
 
