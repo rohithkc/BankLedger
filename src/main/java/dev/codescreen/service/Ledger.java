@@ -1,8 +1,8 @@
 package dev.codescreen.service;
 
-import dev.codescreen.model.Account;
-import dev.codescreen.model.Transaction;
-import dev.codescreen.model.EventType;
+import dev.codescreen.models.Account;
+import dev.codescreen.models.Transaction;
+import dev.codescreen.models.EventType;
 import dev.codescreen.repository.TransactionRepository;
 import java.util.Date;
 
