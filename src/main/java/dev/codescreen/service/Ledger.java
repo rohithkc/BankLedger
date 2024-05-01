@@ -2,11 +2,11 @@ import dev.codescreen.repository.TransactionRepository;
 
 import java.util.Date;
 
-public class LedgerService {
+public class Ledger {
 
     private final TransactionRepository transactionRepository;
 
-    public LedgerService(TransactionRepository transactionRepository) {
+    public Ledger(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }
 
