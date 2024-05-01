@@ -17,6 +17,10 @@ public class TransactionRepository {
     private final ConcurrentHashMap<String, List<Transaction>> transactionsMap = new ConcurrentHashMap<>();
 
     public void save(Transaction transaction) {
+        if (transaction == null) {
+            throw new IllegalArgumentException("Cannot save a null transaction");
+        }
+
         // Retrieve user accountId
         String accountId = transaction.getAccountId();
         List<Transaction> user_transactions = transactionsMap.get(accountId);
@@ -41,6 +45,9 @@ public class TransactionRepository {
 
     public List<Transaction> findByAccountId(String accountId) {
 
+        if(accountId == null){
+            throw new IllegalArgumentException("Cannot have a null account Id");
+        }
         // Get the list of transactions for the account.
         List<Transaction> user_transactions = transactionsMap.get(accountId);
 
