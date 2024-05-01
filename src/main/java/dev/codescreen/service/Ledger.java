@@ -7,6 +7,11 @@ import dev.codescreen.repository.TransactionRepository;
 import java.util.Date;
 import java.util.List;
 
+/*
+ * This class is intended to handle all Business logic:
+ * Depositing funds, withdrawing funds, and getting balance
+ */
+
 public class Ledger {
 
     private final TransactionRepository transactionRepository;
