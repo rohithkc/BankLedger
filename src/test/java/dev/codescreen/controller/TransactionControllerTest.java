@@ -67,7 +67,7 @@ public class TransactionControllerTest {
     public void testDepositNegativeAmount() throws Exception {
         mockMvc.perform(put("/api/transactions/deposit/1")
                 .param("amount", "-100.0"))
-                .andExpect(status().isBadRequest());  // Assuming your controller handles this case
+                .andExpect(status().isBadRequest());
 
         verify(ledgerService, never()).deposit(anyString(), anyDouble());
     }
