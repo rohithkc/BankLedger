@@ -1,5 +1,6 @@
 package dev.codescreen.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import dev.codescreen.service.Ledger;
 
@@ -18,17 +19,30 @@ public class TransactionController {
     }
 
     @PutMapping("/deposit/{accountId}")
-    public double deposit(@PathVariable String accountId, @RequestParam double amount) {
-        return ledgerService.deposit(accountId, amount);
+    public ResponseEntity<Double> deposit(@PathVariable String accountId, @RequestParam double amount) {
+        if (amount <= 0) {
+            return ResponseEntity.badRequest().body(null); // Respond with 400 Bad Request for non-positive amounts
+        }
+        double newBalance = ledgerService.deposit(accountId, amount);
+        return ResponseEntity.ok(newBalance); // Respond with 200 OK and the new balance
     }
 
     @PutMapping("/withdraw/{accountId}")
-    public double withdraw(@PathVariable String accountId, @RequestParam double amount) {
-        return ledgerService.withdraw(accountId, amount);
+    public ResponseEntity<Double> withdraw(@PathVariable String accountId, @RequestParam double amount) {
+        if (amount <= 0) {
+            return ResponseEntity.badRequest().body(null); // Same validation for withdrawal
+        }
+        try {
+            double newBalance = ledgerService.withdraw(accountId, amount);
+            return ResponseEntity.ok(newBalance);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null); // Handle possible exceptions, e.g., insufficient funds
+        }
     }
 
     @GetMapping("/balance/{accountId}")
-    public double getBalance(@PathVariable String accountId) {
-        return ledgerService.getCurrentBalance(accountId);
+    public ResponseEntity<Double> getBalance(@PathVariable String accountId) {
+        double balance = ledgerService.getCurrentBalance(accountId);
+        return ResponseEntity.ok(balance);
     }
 }
