@@ -30,45 +30,53 @@ public class TransactionControllerTest {
     }
     @Test
     public void testDeposit() throws Exception {
+        // Mock the behavior of the ledgerService to return a specific balance after a deposit
         when(ledgerService.deposit("1", 100.0)).thenReturn(150.0);
 
-        mockMvc.perform(put("/api/transactions/deposit/1")
+        // Perform a PUT request to the deposit endpoint and pass parameters
+        mockMvc.perform(put("/api/transactions/deposit/1") // Simulate sending a deposit amount via query parameter
                 .param("amount", "100.0"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("150.0"));
+                .andExpect(status().isOk()) // Expect a 200 OK status code
+                .andExpect(content().string("150.0")); // Expect the response content to be "150.0", which is the new balance
 
         verify(ledgerService).deposit("1", 100.0);
     }
 
     @Test
     public void testWithdraw() throws Exception {
+         // Mock the behavior of the ledgerService to return a specific balance after a deposit
         when(ledgerService.withdraw("1", 50.0)).thenReturn(100.0);
 
-        mockMvc.perform(put("/api/transactions/withdraw/1")
+        mockMvc.perform(put("/api/transactions/withdraw/1") // Simulate sending a withdraw amount via query parameter
                 .param("amount", "50.0"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("100.0"));
+                .andExpect(status().isOk()) // Expect a 200 OK status code
+                .andExpect(content().string("100.0")); // Expect the response content to be "100.0", which is the new balance
 
         verify(ledgerService).withdraw("1", 50.0);
     }
 
     @Test
     public void testGetBalance() throws Exception {
+        // Mock the behavior of the ledgerService to return a specific balance when requested
         when(ledgerService.getCurrentBalance("1")).thenReturn(200.0);
 
+        // Perform a GET request to the balance endpoint
         mockMvc.perform(get("/api/transactions/balance/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("200.0"));
 
+        // Verify that the getCurrentBalance method in the ledgerService was called exactly once with the specified accountId
         verify(ledgerService).getCurrentBalance("1");
     }
 
     @Test
     public void testDepositNegativeAmount() throws Exception {
+        // Perform a PUT request to the deposit endpoint with a negative amount
         mockMvc.perform(put("/api/transactions/deposit/1")
                 .param("amount", "-100.0"))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest()); // Expect a 400 Bad Request status code
 
+        // Verify that the deposit method in the ledgerService was never called since the amount is negative
         verify(ledgerService, never()).deposit(anyString(), anyDouble());
     }
 }

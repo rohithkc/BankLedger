@@ -1,5 +1,5 @@
 package dev.codescreen.service;
-
+import org.springframework.stereotype.Service;
 import dev.codescreen.models.Account;
 import dev.codescreen.models.Transaction;
 import dev.codescreen.models.EventType;
@@ -12,6 +12,7 @@ import java.util.List;
  * Depositing funds, withdrawing funds, and getting balance
  */
 
+ @Service
 public class Ledger {
 
     private final TransactionRepository transactionRepository;

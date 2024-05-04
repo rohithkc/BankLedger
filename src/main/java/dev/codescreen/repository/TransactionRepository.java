@@ -1,7 +1,7 @@
 package dev.codescreen.repository;
 
 import dev.codescreen.models.Transaction;
-
+import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 /*
  * This class is meant to keep a track of all the various transactions that have occured for each user. 
  */
+@Repository
 public class TransactionRepository {
 
     // Initialize Hashmap
