@@ -43,16 +43,43 @@ Here’s a breakdown of the key criteria we’ll be considering when grading you
 
 # Candidate README
 ## Bootstrap instructions
-*Replace this: To run this server locally, do the following:*
+1) Start by cloning the source code from the GitHub repository to your local machine. Open your terminal and run the following command:
+    git clone https://github.com/yourusername/yourrepository.git
+    cd yourrepository
+
+2) Inside the project directory, execute the following Maven command to build the application and download all necessary dependencies:
+    mvn clean install
+
+3) Once the build is complete, you can start the server by running:
+    mvn spring-boot:run
+
+4) Open a web browser or use a tool like curl to verify that the server is running correctly. For example, you can make a request to the root URL:
+    curl http://localhost:8080
+    
+5) You can also run all the integration/unit tests by running:
+    mvn test
 
 ## Design considerations
-*Replace this: I decided to build X for Y reasons.*
+When building this application, I focused on several critical design choices that significantly boost its functionality, scalability, and how easy it is to maintain:
+
+1) I chose to implement a ConcurrentHashMap for managing transactions in TransactionRepository.java rather than using a standard HashMap. My decision was mainly driven by the necessity for thread safety and enhancing performance in situations where multiple threads are accessing and modifying data concurrently. The ConcurrentHashMap is particularly suited for our transaction handling system, as it supports high levels of concurrency without sacrificing thread safety, which is crucial in a banking system where transaction requests are frequently processed simultaneously.
+
+2) Instead of bundling EventType with Account.java or other model classes, I decided it warranted its own space and created a separate Java enum file for it. This separation does more than just tidy up the code—it boosts the modular nature of our application, allowing for cleaner management and updates of event types without tangling with account logic. This clarity not only makes the codebase easier to navigate but also simplifies scaling and maintaining it.
+
+3) I updated the return type in our TransactionController from a plain Double to ResponseEntity<Double>. This adjustment transforms how responses are handled, providing not just the transaction data but also detailed HTTP status codes and headers. Utilizing ResponseEntity<Double> enriches our API's feedback, enabling it to deliver precise transaction outcomes along with relevant HTTP statuses. This detail is essential in REST APIs, where the HTTP response can immediately inform the client about the success of their request or if there were issues, like a bad request or a server error.
+
+4) I decided to implement the server using Spring Boot due to its vast ecosystem and support for rapidly setting up web applications. Spring Boot allows for easy integration of various data sources and third-party libraries, which enhanced the development process significantly. The use of Spring Boot's dependency injection and its comprehensive suite of testing tools also supported a clean, test-driven development approach.
+
+
 
 ## Assumptions
-*Replace this: If you made any assumption in designing the service, document it here*
+While designing the service, I assumed that the system would handle a moderate load of concurrent requests. This assumption influenced the choice of a non-blocking web framework and an in-memory database for speed and simplicity, suitable for demonstration purposes but scalable with minor adjustments for production environments.
 
 ## Bonus: Deployment considerations
-*Replace this: If I were to deploy this, I would host it in this way with these technologies.*
+For deployment, I would use Docker to containerize the application, ensuring consistency across different environments. The container would then be deployed to a Kubernetes cluster managed by a cloud provider such as AWS or Azure for scalability and high availability. 
+
+Additionally, I would integrate a CI/CD pipeline using Jenkins or GitHub Actions to automate the testing and deployment process, enabling continuous delivery. For monitoring and logging, tools like Splunk and New Relic would be integrated to ensure the application's health and performance are transparently managed.
+
 
 ## License
 
