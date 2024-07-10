@@ -1,0 +1,88 @@
+21:00:52.130 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	d.c.c.TransactionController:
+	{GET [/api/transactions/balance/{accountId}]}: getBalance(String)
+	{PUT [/api/transactions/deposit/{accountId}]}: deposit(String,double)
+	{PUT [/api/transactions/withdraw/{accountId}]}: withdraw(String,double)
+	{GET [/api/transactions/]}: home()
+21:00:52.136 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 4 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+21:00:52.341 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+21:00:52.365 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+21:00:52.379 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+21:00:52.379 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+21:00:52.380 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+21:00:52.380 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+21:00:52.381 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@433d93e7
+21:00:52.381 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@87aec6a
+21:00:52.381 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+21:00:52.381 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+21:00:52.414 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - PUT "/api/transactions/withdraw/1", parameters={masked}
+21:00:52.419 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to dev.codescreen.controller.TransactionController#withdraw(String, double)
+21:00:52.475 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+21:00:52.475 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Writing [100.0]
+21:00:52.484 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+21:00:52.495 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	d.c.c.TransactionController:
+	{GET [/api/transactions/balance/{accountId}]}: getBalance(String)
+	{PUT [/api/transactions/deposit/{accountId}]}: deposit(String,double)
+	{PUT [/api/transactions/withdraw/{accountId}]}: withdraw(String,double)
+	{GET [/api/transactions/]}: home()
+21:00:52.496 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 4 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+21:00:52.497 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+21:00:52.498 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+21:00:52.498 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+21:00:52.498 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+21:00:52.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+21:00:52.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+21:00:52.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6d5508a5
+21:00:52.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@103bcc9f
+21:00:52.498 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+21:00:52.498 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+21:00:52.499 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/api/transactions/balance/1", parameters={}
+21:00:52.499 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to dev.codescreen.controller.TransactionController#getBalance(String)
+21:00:52.500 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+21:00:52.501 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Writing [200.0]
+21:00:52.501 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+21:00:52.504 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	d.c.c.TransactionController:
+	{GET [/api/transactions/balance/{accountId}]}: getBalance(String)
+	{PUT [/api/transactions/deposit/{accountId}]}: deposit(String,double)
+	{PUT [/api/transactions/withdraw/{accountId}]}: withdraw(String,double)
+	{GET [/api/transactions/]}: home()
+21:00:52.504 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 4 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+21:00:52.506 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+21:00:52.506 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+21:00:52.506 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+21:00:52.506 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+21:00:52.506 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+21:00:52.506 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+21:00:52.506 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4ff0706c
+21:00:52.506 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6968bb65
+21:00:52.506 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+21:00:52.507 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+21:00:52.507 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - PUT "/api/transactions/deposit/1", parameters={masked}
+21:00:52.507 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to dev.codescreen.controller.TransactionController#deposit(String, double)
+21:00:52.509 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+21:00:52.509 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Nothing to write: null body
+21:00:52.509 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 400 BAD_REQUEST
+21:00:52.512 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	d.c.c.TransactionController:
+	{GET [/api/transactions/balance/{accountId}]}: getBalance(String)
+	{PUT [/api/transactions/deposit/{accountId}]}: deposit(String,double)
+	{PUT [/api/transactions/withdraw/{accountId}]}: withdraw(String,double)
+	{GET [/api/transactions/]}: home()
+21:00:52.512 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 4 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+21:00:52.514 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+21:00:52.514 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+21:00:52.514 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+21:00:52.514 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+21:00:52.514 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+21:00:52.514 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+21:00:52.514 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5ac0bf84
+21:00:52.514 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6fefc5ea
+21:00:52.514 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+21:00:52.514 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+21:00:52.515 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - PUT "/api/transactions/deposit/1", parameters={masked}
+21:00:52.515 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to dev.codescreen.controller.TransactionController#deposit(String, double)
+21:00:52.517 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+21:00:52.517 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor - Writing [150.0]
+21:00:52.517 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
