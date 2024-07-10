@@ -1,9 +1,8 @@
-package dev.codescreen.service;
+package dev.ledger.service;
 import org.springframework.stereotype.Service;
-import dev.codescreen.models.Account;
-import dev.codescreen.models.Transaction;
-import dev.codescreen.models.EventType;
-import dev.codescreen.repository.TransactionRepository;
+import dev.ledger.models.Transaction;
+import dev.ledger.models.EventType;
+import dev.ledger.repository.TransactionRepository;
 import java.util.Date;
 import java.util.List;
 

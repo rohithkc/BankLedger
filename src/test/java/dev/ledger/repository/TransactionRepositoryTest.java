@@ -1,9 +1,7 @@
-package dev.codescreen.repository;
-import dev.codescreen.models.EventType;
+package dev.ledger.repository;
+import dev.ledger.models.EventType;
 import java.util.Date;
-import dev.codescreen.service.Ledger;
-import dev.codescreen.models.Transaction;
-import dev.codescreen.repository.TransactionRepository;
+import dev.ledger.models.Transaction;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;

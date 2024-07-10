@@ -1,8 +1,8 @@
-package dev.codescreen.controller;
+package dev.ledger.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import dev.codescreen.service.Ledger;
+import dev.ledger.service.Ledger;
 
 
 /*

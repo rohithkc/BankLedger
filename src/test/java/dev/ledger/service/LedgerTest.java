@@ -1,7 +1,6 @@
-package dev.codescreen.service;
+package dev.ledger.service;
 
-import dev.codescreen.service.Ledger;
-import dev.codescreen.repository.TransactionRepository;
+import dev.ledger.repository.TransactionRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
