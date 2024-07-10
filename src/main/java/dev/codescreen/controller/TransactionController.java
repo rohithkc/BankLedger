@@ -45,4 +45,9 @@ public class TransactionController {
         double balance = ledgerService.getCurrentBalance(accountId);
         return ResponseEntity.ok(balance);
     }
+    
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the application!";
+    }
 }
