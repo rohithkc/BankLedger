@@ -1,4 +1,4 @@
-package dev.codescreen.models;
+package dev.ledger.models;
 
 import java.util.Date;
 
